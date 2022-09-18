@@ -1,0 +1,10 @@
+CREATE DATABASE adi_db;
+use  adi_db;
+create table customer(id int auto_increment not null,name varchar(45),email varchar(45),address varchar(50),primary key(id));
+create table product(id int auto_increment not null,name varchar(45),price decimal(5,2),primary key(id));
+insert into customer (`name`,`email`,`address`) values("ad","gxhjbvjhb","ashiqs");
+select * from customer;
+insert into product(`name`,`price`) values ("gd","663.22");
+select * from product;
+create table orders(id int not null auto_increment,customer_id int not null,product_id int not null,foreign key(customer_id) references customer(id),
+foreign key(product_id) references product(id),primary key(id));
